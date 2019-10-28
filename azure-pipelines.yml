@@ -32,4 +32,12 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarDemo'
+    organization: 'az400'
+    scannerMode: 'MSBuild'
+    projectKey: 'SonarDemo'
+    projectName: 'SonarDemo'
+
 - task: SonarCloudAnalyze@1
